@@ -1,0 +1,36 @@
+{
+  "name": "until-runs-dry",
+  "version": "1.0.0",
+  "description": "Keep running jobs in parallel until the data source runs dry",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsup ./src",
+    "test": "jest",
+    "clean": "rm -r dist",
+    "deploy": "npm run build&&npm publish&&npm run clean"
+  },
+  "author": "Tomohisa Ota",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.5",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5"
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts"
+}
