@@ -1,16 +1,4 @@
-# until-runs-dry
-Keep running jobs in parallel until the data source runs dry
-
-# How to install
-
-```shell
-npm install until-runs-dry
-```
-
-# How to use
-
-```typescript
-import {untilRunsDry} from "until-runs-dry";
+import {untilRunsDry} from "../src";
 
 // flag to stop generator
 let shouldContinue = true
@@ -45,14 +33,3 @@ async function main() {
 }
 
 main()
-```
-
-# Version History
-
-- 1.0.0
-    - Initial Release
-
-# License
-
-This project is under the MIT license.
-Copyright (c) 2024 Tomohisa Ota

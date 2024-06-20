@@ -1,5 +1,5 @@
 export async function untilRunsDry<T>({generator, processor, onError, concurrency, checkInterval}: {
-    generator: AsyncGenerator<T>,
+    generator: () => AsyncGenerator<T>,
     processor: (target: T) => Promise<void>
     onError?: (err: unknown) => void
     concurrency: number
@@ -9,7 +9,7 @@ export async function untilRunsDry<T>({generator, processor, onError, concurrenc
         throw new Error(`concurrency should be greater or equal to 1`)
     }
     let running = 0
-    for await (const i of generator) {
+    for await (const i of generator()) {
         running += 1
         processor(i).then(() => {
             running -= 1

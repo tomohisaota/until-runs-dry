@@ -2,13 +2,13 @@
   "name": "until-runs-dry",
   "version": "1.0.0",
   "description": "Keep running jobs in parallel until the data source runs dry",
-  "main": "index.js",
   "scripts": {
     "build": "npx tsup ./src",
     "test": "jest",
     "clean": "rm -r dist",
     "deploy": "npm run build&&npm publish&&npm run clean"
   },
+  "repository": "github:tomohisaota/until-runs-dry.git",
   "author": "Tomohisa Ota",
   "license": "MIT",
   "devDependencies": {
